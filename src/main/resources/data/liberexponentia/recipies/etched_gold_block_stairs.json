@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "liberexponentia:etched_gold_block"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:etched_gold_block_stairs"
+,    "count": 4,  }
+}

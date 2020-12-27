@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "liberexponentia:gold_tiles"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:gold_tiles_slab"
+,    "count": 6,  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "X X",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:glass"
+    },
+    "Y": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:liquid_jar"
+  }
+}

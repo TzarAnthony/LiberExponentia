@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "liberexponentia:block/purple_mud_bricks",
+    "top": "liberexponentia:block/purple_mud_bricks",
+    "side": "liberexponentia:block/purple_mud_bricks"
+  }
+}

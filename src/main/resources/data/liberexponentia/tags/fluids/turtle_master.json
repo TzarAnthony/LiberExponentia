@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:fluids/turtle_master",
+    "#forge:fluids/turtle_master_t",
+    "#forge:fluids/turtle_master_2"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+    {
+      "name": "orange_concrete_slab",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "liberexponentia:orange_concrete_slab"
+        }
+      ],
+      "conditions": [ { "condition": "minecraft:survives_explosion" } ]
+    }
+  ]
+}

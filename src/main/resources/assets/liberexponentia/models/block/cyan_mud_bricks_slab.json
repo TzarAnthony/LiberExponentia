@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "liberexponentia:block/cyan_mud_bricks",
+    "top": "liberexponentia:block/cyan_mud_bricks",
+    "side": "liberexponentia:block/cyan_mud_bricks"
+  }
+}

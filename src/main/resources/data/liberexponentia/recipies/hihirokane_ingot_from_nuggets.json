@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "hihirokane_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "liberexponentia:hihirokane_nugget"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:hihirokane_ingot"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "liberexponentia:block/etched_gold_block_slab"
+    },
+    "type=double": {
+      "model": "liberexponentia:block/etched_gold_block"
+    },
+    "type=top": {
+      "model": "liberexponentia:block/etched_gold_block_slab_top"
+    }
+  }
+}

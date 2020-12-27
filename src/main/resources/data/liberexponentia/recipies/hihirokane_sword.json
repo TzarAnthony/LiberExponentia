@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "Y"
+  ],
+  "key": {
+    "X": {
+      "item": "liberexponentia:hihirokane_ingot"
+    },
+    "Y": {
+      "item": "liberexponentia:draconite"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:hihirokane_sword"
+  }
+}

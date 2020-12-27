@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "forge:rod/wooden"
+    },
+    "X": {
+      "item": "forge:ingots/silver"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:silver_pickaxe"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "liberexponentia:silver_pickaxe"
+    },
+    {
+      "item": "liberexponentia:silver_shovel"
+    },
+    {
+      "item": "liberexponentia:silver_axe"
+    },
+    {
+      "item": "liberexponentia:silver_hoe"
+    },
+    {
+      "item": "liberexponentia:silver_sword"
+    },
+    {
+      "item": "liberexponentia:silver_helmet"
+    },
+    {
+      "item": "liberexponentia:silver_chestplate"
+    },
+    {
+      "item": "liberexponentia:silver_leggings"
+    },
+    {
+      "item": "liberexponentia:silver_boots"
+    },
+    {
+      "item": "liberexponentia:silver_arrow"
+    }
+  ],
+  "result": "liberexponentia:silver_nugget",
+  "experience": 0.1,
+  "cookingtime": 100
+}

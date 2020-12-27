@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+    {
+      "name": "mud",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "liberexponentia:mud"
+        }
+      ],
+      "conditions": [ { "condition": "minecraft:survives_explosion" } ]
+    }
+  ]
+}

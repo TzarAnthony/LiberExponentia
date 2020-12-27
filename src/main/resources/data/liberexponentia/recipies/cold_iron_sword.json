@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "liberexponentia:cold_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:cold_iron_sword"
+  }
+}

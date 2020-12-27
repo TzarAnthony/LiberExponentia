@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:fluids/harming",
+    "#forge:fluids/harming_2"
+  ]
+}

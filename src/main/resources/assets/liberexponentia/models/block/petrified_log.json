@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "liberexponentia:blocks/petrified_log_top",
+    "side": "liberexponentia:blocks/petrified_log_side"
+  }
+}

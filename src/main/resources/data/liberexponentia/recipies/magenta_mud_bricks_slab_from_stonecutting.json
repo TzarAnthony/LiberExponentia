@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "liberexponentia:magenta_mud_bricks"
+  },
+  "result": "liberexponentia:magenta_mud_bricks_slab",
+  "count": 2
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "liberexponentia:gold_tiles"
+  },
+  "result": "liberexponentia:gold_tiles_slab",
+  "count": 2
+}

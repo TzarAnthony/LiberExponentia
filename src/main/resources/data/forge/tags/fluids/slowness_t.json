@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "liberexponentia:slowness_t",
+    "liberexponentia:flowing_slowness_t"
+  ]
+}

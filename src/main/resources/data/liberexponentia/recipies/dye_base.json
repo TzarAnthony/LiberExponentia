@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "yzy",
+    "xxx"
+  ]
+  "key": {
+    "x": {
+      "tag": "liberexponentia:dye"
+    },
+    "y": {
+      "item": "minecraft:clay_ball"
+    },
+    "z": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:dye_base",
+    "count":  10
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "liberexponentia:hihirokane_ingot"
+    }
+  ],
+  "result": {
+    "item": "liberexponentia:hihirokane_nugget",
+    "count": 9
+  }
+}

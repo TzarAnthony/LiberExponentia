@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "liberexponentia:block/end_lantern"
+    },
+    "hanging=true": {
+      "model": "liberexponentia:block/end_lantern_hanging"
+    }
+  }
+}

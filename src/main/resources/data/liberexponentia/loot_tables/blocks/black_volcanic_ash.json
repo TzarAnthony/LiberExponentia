@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+    {
+      "name": "black_volcanic_ash",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "liberexponentia:black_volcanic_ash"
+        }
+      ],
+      "conditions": [ { "condition": "minecraft:survives_explosion" } ]
+    }
+  ]
+}

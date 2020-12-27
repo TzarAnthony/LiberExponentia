@@ -1,0 +1,34 @@
+{
+  "type": "liberexponentia:forge",
+  "group": "cold_iron_ingot",
+  "fluidIn": {
+    "amount": 1000,
+    "fluid": "liberexponentia:weakness"
+  }
+  "elementIn": {
+    "amount": 2000,
+    "element": "liberexponentia:aqua"
+  }
+  "pattern": [
+    "#X#",
+    "Z#Y"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "X": {
+      "tag": "forge:ingots/silver"
+    },
+    "Y": {
+      "item": "liberexponentia:bottle_of_mercury"
+    },
+    "Z": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:cold_iron_ingot",
+    "count": 1
+  }
+}

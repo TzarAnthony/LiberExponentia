@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "hihirokane_ingot",
+  "ingredients": [
+    {
+      "item": "liberexponentia:hihirokane_block"
+    }
+  ],
+  "result": {
+    "item": "liberexponentia:hihirokane_ingot",
+    "count": 9
+  }
+}

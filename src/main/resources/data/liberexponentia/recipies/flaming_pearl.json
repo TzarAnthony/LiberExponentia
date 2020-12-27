@@ -1,0 +1,25 @@
+{
+  "type": "liberexponentia:forge",
+  "fluidIn": {
+    "amount": 1000,
+    "fluid": "liberexponentia:lava"
+  }
+  "elementIn": {
+    "amount": 2000,
+    "element": "liberexponentia:igni"
+  }
+  "pattern": [
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:ender_pearl"
+    },
+    "X": {
+      "item": "liberexponentia:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:hihirokane_ingot"
+  }
+}

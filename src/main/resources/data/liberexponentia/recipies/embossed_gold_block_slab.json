@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "liberexponentia:embossed_gold_block"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:embossed_gold_block_slab"
+,    "count": 6,  }
+}

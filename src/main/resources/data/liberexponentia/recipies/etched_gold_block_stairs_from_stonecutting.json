@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "liberexponentia:etched_gold_block"
+  },
+  "result": "liberexponentia:etched_gold_block_stairs",
+  "count": 1
+}

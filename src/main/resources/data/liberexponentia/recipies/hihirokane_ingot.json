@@ -1,0 +1,31 @@
+{
+  "type": "liberexponentia:forge",
+  "group": "hihirokane_ingot",
+  "fluidIn": {
+    "amount": 1000,
+    "fluid": "liberexponentia:strength"
+  }
+  "elementIn": {
+    "amount": 2000,
+    "element": "liberexponentia:mind"
+  }
+  "pattern": [
+    " Y ",
+    "X#X",
+    " Y "
+  ],
+  "key": {
+    "#": {
+      "item": "forge:ingots/netherite"
+    },
+    "X": {
+      "item": "liberexponentia:flaming_pearl"
+    },
+    "Y": {
+      "item": "liberexponentia:bottle_of_mercury"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:hihirokane_ingot"
+  }
+}

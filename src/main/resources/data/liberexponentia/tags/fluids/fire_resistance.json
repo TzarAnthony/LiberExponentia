@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:fluids/fire_resistance",
+    "#forge:fluids/fire_resistance"
+  ]
+}

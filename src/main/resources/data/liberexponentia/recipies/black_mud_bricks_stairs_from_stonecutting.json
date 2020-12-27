@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "liberexponentia:black_mud_bricks"
+  },
+  "result": "liberexponentia:black_mud_bricks_stairs",
+  "count": 1
+}

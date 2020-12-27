@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+    {
+      "name": "magenta_mud_bricks_stairs",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "liberexponentia:magenta_mud_bricks_stairs"
+        }
+      ],
+      "conditions": [ { "condition": "minecraft:survives_explosion" } ]
+    }
+  ]
+}

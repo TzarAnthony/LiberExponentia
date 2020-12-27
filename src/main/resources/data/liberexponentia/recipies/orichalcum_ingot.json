@@ -1,0 +1,35 @@
+{
+  "type": "liberexponentia:forge",
+  "group": "orichalcum_ingot",
+  "fluidIn": {
+    "amount": 1000,
+    "fluid": "liberexponentia:water_breathing"
+  },
+  "elementIn": {
+    "amount": 2000,
+    "element": "liberexponentia:terra"
+  },
+  "pattern": [
+    "X X",
+    "YZY",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "forge:ingots/gild"
+    },
+    "X": {
+      "item": "forge:ingots/silver"
+    },
+    "Y": {
+      "item": "minecraft:clay_ball"
+    },
+    "Z": {
+      "item": "liberexponentia:bottle_of_mercury"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:hihirokane_ingot",
+    "count": 2
+  }
+}

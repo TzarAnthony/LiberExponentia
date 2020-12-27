@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "liberexponentia:block/gold_bricks",
+    "top": "liberexponentia:block/gold_bricks",
+    "side": "liberexponentia:block/gold_bricks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "liberexponentia:block/magenta_mud_bricks_slab"
+    },
+    "type=double": {
+      "model": "liberexponentia:block/magenta_mud_bricks"
+    },
+    "type=top": {
+      "model": "liberexponentia:block/magenta_mud_bricks_slab_top"
+    }
+  }
+}

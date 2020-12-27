@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "liberexponentia:block/etched_gold_block",
+    "top": "liberexponentia:block/etched_gold_block",
+    "side": "liberexponentia:block/etched_gold_block"
+  }
+}

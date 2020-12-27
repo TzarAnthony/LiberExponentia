@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "liberexponentia:block/gold_tiles_slab"
+    },
+    "type=double": {
+      "model": "liberexponentia:block/gold_tiles"
+    },
+    "type=top": {
+      "model": "liberexponentia:block/gold_tiles_slab_top"
+    }
+  }
+}

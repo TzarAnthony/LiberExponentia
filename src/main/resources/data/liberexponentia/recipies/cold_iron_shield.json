@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WoW",
+    "WWW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "o": {
+      "item": "liberexponentia:cold_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:cold_iron_shield"
+  }
+}

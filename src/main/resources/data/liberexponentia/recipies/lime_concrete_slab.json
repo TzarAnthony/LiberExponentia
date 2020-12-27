@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lime_concrete"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:lime_concrete_slab"
+,    "count": 6,  }
+}

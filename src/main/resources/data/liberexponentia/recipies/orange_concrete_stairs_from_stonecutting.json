@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:orange_concrete"
+  },
+  "result": "liberexponentia:orange_concrete_stairs",
+  "count": 1
+}

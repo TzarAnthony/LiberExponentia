@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:fluids/swiftness",
+    "#forge:fluids/swiftness_t",
+    "#forge:fluids/swiftness_2"
+  ]
+}

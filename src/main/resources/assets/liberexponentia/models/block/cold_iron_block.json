@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "liberexponentia:blocks/cold_iron_block"
+  }
+}

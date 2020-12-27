@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:fluids/night_vision",
+    "#forge:fluids/night_vision_t"
+  ]
+}
