@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/mud"
+      "model": "liberexponentia:block/mud"
     }
   }
 }

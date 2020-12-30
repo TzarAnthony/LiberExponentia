@@ -1,7 +1,6 @@
 package com.tzaranthony.liberexponentia.entity;
 
 import com.tzaranthony.liberexponentia.util.LEItems;
-
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -18,11 +17,11 @@ public class SilverArrowEntity extends AbstractArrowEntity{
 	}
 	
 	public SilverArrowEntity(World worldIn, LivingEntity shooter) {
-		super(EntityType.SILVER_ARROW, shooter, worldIn);
+		super(EntityType.ARROW, shooter, worldIn);
 	}
 	
 	public SilverArrowEntity(EntityType<? extends SilverArrowEntity> type, World worldIn, double x, double y, double z) {
-		super(EntityType.SILVER_ARROW, x, y, z, worldIn);
+		super(EntityType.ARROW, x, y, z, worldIn);
 		this.extraDamage = 1.05f;
 		this.setDamage(3.0f);
 	}

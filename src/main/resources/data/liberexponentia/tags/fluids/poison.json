@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/poison",
-    "#forge:fluids/poison_t",
-    "#forge:fluids/poison_2"
-  ]
-}

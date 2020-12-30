@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/regeneration",
-    "#forge:fluids/regeneration_t",
-    "#forge:fluids/regeneration_2"
-  ]
-}

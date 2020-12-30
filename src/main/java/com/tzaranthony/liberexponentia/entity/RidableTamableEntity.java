@@ -1,51 +1,8 @@
 package com.tzaranthony.liberexponentia.entity;
 
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.passive.horse.AbstractHorseEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.IInventoryChangedListener;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.particles.IParticleData;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.potion.Effects;
-import net.minecraft.server.management.PreYggdrasilConverter;
-import net.minecraft.util.*;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.function.Predicate;
-
+/*
 public class RidableTamableEntity extends TameableEntity implements IInventoryChangedListener, IJumpingMount, IEquipable {
     private static final Predicate<LivingEntity> IS_HORSE_BREEDING = (p_213617_0_) -> {
         return p_213617_0_ instanceof AbstractHorseEntity && ((AbstractHorseEntity)p_213617_0_).isBreeding();
@@ -56,12 +13,16 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
     public int sprintCounter;
     protected boolean isJumping;
     protected Inventory entityInventory;
-    /** The higher this value, the more likely the horse is to be tamed next time a player rides it. */
+    */
+/** The higher this value, the more likely the horse is to be tamed next time a player rides it. *//*
+
     protected int temper;
     protected float jumpPower;
     private boolean allowStandSliding;
     protected boolean canGallop = true;
-    /** Used to determine the sound that the horse should make when it steps */
+    */
+/** Used to determine the sound that the horse should make when it steps *//*
+
     protected int gallopTime;
 
     protected RidableTamableEntity(EntityType<? extends RidableTamableEntity> type, World worldIn) {
@@ -139,9 +100,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         return i;
     }
 
-    /**
+    */
+/**
      * Returns true if this entity should push and be pushed by other entities when colliding.
-     */
+     *//*
+
     public boolean canBePushed() {
         return !this.isBeingRidden();
     }
@@ -211,9 +174,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         }
     }
 
-    /**
+    */
+/**
      * Called by InventoryBasic.onInventoryChanged() on a array that is never filled.
-     */
+     *//*
+
     public void onInventoryChanged(IInventory invBasic) {
         boolean flag = this.isHorseSaddled();
         this.func_230275_fc_();
@@ -293,9 +258,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         return MobEntity.func_233666_p_().func_233814_a_(Attributes.field_233830_m_).func_233815_a_(Attributes.field_233818_a_, 53.0D).func_233815_a_(Attributes.field_233821_d_, (double)0.225F);
     }
 
-    /**
+    */
+/**
      * Will return how many at most can spawn in a chunk at once.
-     */
+     *//*
+
     public int getMaxSpawnedInChunk() {
         return 6;
     }
@@ -304,16 +271,20 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         return 100;
     }
 
-    /**
+    */
+/**
      * Returns the volume for the sounds this mob makes.
-     */
+     *//*
+
     protected float getSoundVolume() {
         return 0.8F;
     }
 
-    /**
+    */
+/**
      * Get number of ticks, at least during which the living entity will be silent.
-     */
+     *//*
+
     public int getTalkInterval() {
         return 400;
     }
@@ -416,17 +387,21 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
 
     }
 
-    /**
+    */
+/**
      * Dead and sleeping entities cannot move
-     */
+     *//*
+
     protected boolean isMovementBlocked() {
         return super.isMovementBlocked() && this.isBeingRidden() && this.isHorseSaddled() || this.isEatingHaystack() || this.isRearing();
     }
 
-    /**
+    */
+/**
      * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
      * the animal type)
-     */
+     *//*
+
     public boolean isBreedingItem(ItemStack stack) {
         return field_234235_bE_.test(stack);
     }
@@ -448,10 +423,12 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         }
     }
 
-    /**
+    */
+/**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
-     */
+     *//*
+
     public void livingTick() {
         if (this.rand.nextInt(200) == 0) {
             this.moveTail();
@@ -492,9 +469,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         return true;
     }
 
-    /**
+    */
+/**
      * Called to update the entity's position/logic.
-     */
+     *//*
+
     public void tick() {
         super.tick();
         if (this.openMouthCounter > 0 && ++this.openMouthCounter > 30) {
@@ -698,9 +677,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
 
     }
 
-    /**
+    */
+/**
      * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
+     *//*
+
     public void readAdditional(CompoundNBT compound) {
         super.readAdditional(compound);
         this.setEatingHaystack(compound.getBoolean("EatingHaystack"));
@@ -729,16 +710,20 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         this.func_230275_fc_();
     }
 
-    /**
+    */
+/**
      * Returns true if the mob is currently able to mate with the specified mob.
-     */
+     *//*
+
     public boolean canMateWith(AnimalEntity otherAnimal) {
         return false;
     }
 
-    /**
+    */
+/**
      * Return true if the horse entity ready to mate. (no rider, not riding, tame, adult, not steril...)
-     */
+     *//*
+
     protected boolean canMate() {
         return !this.isBeingRidden() && !this.isPassenger() && this.isTamed() && !this.isChild() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
     }
@@ -757,10 +742,12 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         p_190681_2_.getAttribute(Attributes.field_233821_d_).setBaseValue(d2 / 3.0D);
     }
 
-    /**
+    */
+/**
      * returns true if all the conditions for steering the entity are met. For pigs, this is true if it is being ridden
      * by a player and the player is holding a carrot-on-a-stick
-     */
+     *//*
+
     public boolean canBeSteered() {
         return this.getControllingPassenger() instanceof LivingEntity;
     }
@@ -812,9 +799,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
     public void handleStopJump() {
     }
 
-    /**
+    */
+/**
      * "Spawns particles for the horse entity. par1 tells whether to spawn hearts. If it is false, it spawns smoke."
-     */
+     *//*
+
     @OnlyIn(Dist.CLIENT)
     protected void spawnHorseParticles(boolean p_110216_1_) {
         IParticleData iparticledata = p_110216_1_ ? ParticleTypes.HEART : ParticleTypes.SMOKE;
@@ -828,9 +817,11 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
 
     }
 
-    /**
+    */
+/**
      * Handler for {@link World#setEntityState}
-     */
+     *//*
+
     @OnlyIn(Dist.CLIENT)
     public void handleStatusUpdate(byte id) {
         if (id == 7) {
@@ -863,31 +854,39 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
 
     }
 
-    /**
+    */
+/**
      * Returns randomized max health
-     */
+     *//*
+
     protected float getModifiedMaxHealth() {
         return 15.0F + (float)this.rand.nextInt(8) + (float)this.rand.nextInt(9);
     }
 
-    /**
+    */
+/**
      * Returns randomized jump strength
-     */
+     *//*
+
     protected double getModifiedJumpStrength() {
         return (double)0.4F + this.rand.nextDouble() * 0.2D + this.rand.nextDouble() * 0.2D + this.rand.nextDouble() * 0.2D;
     }
 
-    /**
+    */
+/**
      * Returns randomized movement speed
-     */
+     *//*
+
     protected double getModifiedMovementSpeed() {
         return ((double)0.45F + this.rand.nextDouble() * 0.3D + this.rand.nextDouble() * 0.3D + this.rand.nextDouble() * 0.3D) * 0.25D;
     }
 
-    /**
+    */
+/**
      * Returns true if this entity should move as if it were on a ladder (either because it's actually on a ladder, or
      * for AI reasons)
-     */
+     *//*
+
     public boolean isOnLadder() {
         return false;
     }
@@ -931,10 +930,12 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         }
     }
 
-    /**
+    */
+/**
      * For vehicles, the first passenger is generally considered the controller and "drives" the vehicle. For example,
      * Pigs, Horses, and Boats are generally "steered" by the controlling passenger.
-     */
+     *//*
+
     @Nullable
     public Entity getControllingPassenger() {
         return this.getPassengers().isEmpty() ? null : this.getPassengers().get(0);
@@ -1019,3 +1020,4 @@ public class RidableTamableEntity extends TameableEntity implements IInventoryCh
         }
     }
 }
+*/

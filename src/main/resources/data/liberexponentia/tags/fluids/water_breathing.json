@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/water_breathing",
-    "#forge:fluids/water_breathing_t"
-  ]
-}

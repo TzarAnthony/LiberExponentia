@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/hihirokane_block"
+      "model": "liberexponentia:block/hihirokane_block"
     }
   }
 }

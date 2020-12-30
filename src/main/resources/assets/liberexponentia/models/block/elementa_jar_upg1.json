@@ -1,9 +1,0 @@
-{
-  "parent": "block/jar",
-  "textures": {
-    "bottom": "liberexponentia:elementa_jar_bottom",
-    "side": "liberexponentia:elementa_jar_side_upg1",
-    "lidtop": "liberexponentia:lid_top",
-    "lidside": "liberexponentia:lid_side"
-  }
-}

@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/mud"
+    "all": "liberexponentia:block/mud"
   }
 }

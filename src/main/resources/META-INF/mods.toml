@@ -20,7 +20,7 @@ license="All rights reserved"
 
 
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="http://my.issue.tracker/" #optional
+issueTrackerURL="https://github.com/TzarAnthony/LiberExponentia/issues"
 
 
 
@@ -60,18 +60,18 @@ logoFile="liber_exponentia_base_mark.png" #optional
 
 
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="Thanks to me for being awesome" #optional
 
 
 
 # A text field displayed in the mod UI
-authors="TzarAnthonyMCXI" #optional
+authors="TzarAnthony" #optional
 
 
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Kinda like other magic mods. Early game focuses on combat, Mid and Late game focus more on automation.
+Kinda like other magic mods, but I made it.
 '''
 
 

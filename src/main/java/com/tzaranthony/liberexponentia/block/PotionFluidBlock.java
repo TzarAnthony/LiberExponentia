@@ -1,44 +1,36 @@
 package com.tzaranthony.liberexponentia.block;
 
-import com.tzaranthony.liberexponentia.fluid.util.PotionTypes;
+import com.tzaranthony.liberexponentia.fluid.PotionFluid;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.fluid.FlowingFluid;
-import net.minecraft.potion.*;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class PotionFluidBlock extends FlowingFluidBlock {
-    protected Potion potion;
+    public List<EffectInstance> effects;
 
-    // TODO: This cana bea removeda and justa use a the PotionUtils.getPotionColor(potionFluidBlock.getPotion())
-    protected int fluidColor;
-
-    public PotionFluidBlock(String name, FlowingFluid fluid, PotionTypes potionType) {
+    public PotionFluidBlock(PotionFluid fluid) {
         super(fluid, AbstractBlock.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops());
-        this.setRegistryName(name);
-        this.fluidColor = PotionUtils.getPotionColor(potion);
-    }
-
-    public Potion getPotion() {
-        return potion;
-    }
-
-    public int getFluidColor() {
-        return fluidColor;
+        this.effects = fluid.getPotionEffects();
+        this.setRegistryName(fluid.getName());
     }
 
     @Override
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        if (!worldIn.isRemote && worldIn.getDifficulty() != Difficulty.PEACEFUL) {
+        if (!worldIn.isRemote) {
             if (entityIn instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity)entityIn;
-                livingentity.addPotionEffect();
+
+                // Make fluid block give all effects of potion
+                for (EffectInstance effect : this.effects)
+                    livingentity.addPotionEffect(effect);
             }
         }
     }

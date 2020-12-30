@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/leaping",
-    "#forge:fluids/leaping_t",
-    "#forge:fluids/leaping_2"
-  ]
-}

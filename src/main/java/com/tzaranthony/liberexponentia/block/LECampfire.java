@@ -13,7 +13,7 @@ public class LECampfire extends CampfireBlock{
 		super(true, 1, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN)
 				.hardnessAndResistance(2.0F)
 				.sound(SoundType.WOOD)
-				.func_235838_a_((lightVar) -> {return p_235421_1_.get(BlockStateProperties.LIT) ? light : 0;})
+				.func_235838_a_((lightVar) -> {return lightVar.get(BlockStateProperties.LIT) ? light : 0;})
 				.notSolid());
 		this.setRegistryName(name);
 	}

@@ -1,7 +1,6 @@
 package com.tzaranthony.liberexponentia.item;
 
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
-
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
@@ -13,7 +12,7 @@ public class NymphaBerries extends Item{
 	@SuppressWarnings("deprecation")
 	public NymphaBerries(String name) {
 		super(new Item.Properties()
-				.group(Liber_Exponentia.TAB)
+				.group(LiberExponentia.TAB)
 				.rarity(Rarity.EPIC)
 				.food(new Food.Builder()
 						.hunger(2)

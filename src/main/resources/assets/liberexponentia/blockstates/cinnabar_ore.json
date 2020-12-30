@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/cinnabar_ore"
+      "model": "liberexponentia:block/cinnabar_ore"
     }
   }
 }

@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/slow_falling",
-    "#forge:fluids/slow_falling_t"
-  ]
-}

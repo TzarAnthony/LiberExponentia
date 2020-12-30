@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "liberexponentia:blocks/rough_petrified_log",
+      "model": "liberexponentia:block/rough_petrified_log",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "liberexponentia:blocks/rough_petrified_log"
+      "model": "liberexponentia:block/rough_petrified_log"
     },
     "axis=z": {
-      "model": "liberexponentia:blocks/rough_petrified_log",
+      "model": "liberexponentia:block/rough_petrified_log",
       "x": 90
     }
   }

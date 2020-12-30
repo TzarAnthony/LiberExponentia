@@ -1,14 +1,14 @@
 package com.tzaranthony.liberexponentia.util;
 
-import java.util.function.Supplier;
-
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
+
+import java.util.function.Supplier;
 
 public enum TAToolTier implements IItemTier{
 	
 	SILVER(2, 195, 9.5F, 0.0F, 22, () -> {
-		return Ingredient.fromItems(RegistryHandler.SILVER_INGOT.get());
+		return Ingredient.fromItems(LEItems.SILVER_INGOT.getItem());
 		});
 	
 	private final int harvestLevel;
@@ -17,7 +17,7 @@ public enum TAToolTier implements IItemTier{
 	private final float attackDamage;
 	private final int enchantability;
 	private final Supplier<Ingredient> repairMaterial;
-	
+
 	TAToolTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial){
 		this.harvestLevel = harvestLevel;
 		this.maxUses = maxUses;

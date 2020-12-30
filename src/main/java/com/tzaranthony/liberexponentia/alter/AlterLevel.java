@@ -1,13 +1,6 @@
 package com.tzaranthony.liberexponentia.alter;
 
-import com.google.common.collect.Lists;
-
-import io.netty.util.ResourceLeakDetector.Level;
-import net.minecraft.util.math.BlockPos;
-
-import java.util.List;
-import java.util.function.Consumer;
-
+/*
 public enum AlterLevel {
     void LevelOne() {
     	@Override
@@ -125,3 +118,4 @@ public enum AlterLevel {
         return altarComponents;
     }
 }
+*/

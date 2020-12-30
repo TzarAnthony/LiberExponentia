@@ -1,7 +1,6 @@
 package com.tzaranthony.liberexponentia.item;
 
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
-
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
@@ -13,7 +12,7 @@ public class VampireBlood extends Item{
 	@SuppressWarnings("deprecation")
 	public VampireBlood(String name, Rarity rare, int hunger, int potency, float probability, int negPotency, float negProbability) {
 		super(new Item.Properties()
-				.group(Liber_Exponentia.TAB)
+				.group(LiberExponentia.TAB)
 				.rarity(rare)
 				.food(new Food.Builder()
 						.hunger(hunger)

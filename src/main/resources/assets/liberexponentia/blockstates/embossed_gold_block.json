@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/embossed_gold_block"
+      "model": "liberexponentia:block/embossed_gold_block"
     }
   }
 }

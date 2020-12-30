@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/infused_end_stone"
+      "model": "liberexponentia:block/infused_end_stone"
     }
   }
 }

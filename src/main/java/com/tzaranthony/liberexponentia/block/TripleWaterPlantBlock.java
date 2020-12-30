@@ -1,9 +1,6 @@
 package com.tzaranthony.liberexponentia.block;
 
-import javax.annotation.Nullable;
-
 import com.tzaranthony.liberexponentia.util.LEBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -24,12 +21,13 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+
 public class TripleWaterPlantBlock extends TriplePlantBlock implements IWaterLoggable{
 	public static final BooleanProperty WATER_LOGGED = BlockStateProperties.WATERLOGGED;
 	
 	public TripleWaterPlantBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(THIRD, TripleBlockThirds.LOWER).with(WATER_LOGGED, Boolean.valueOf(true)));
 	};
 	
 	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
@@ -90,8 +88,8 @@ public class TripleWaterPlantBlock extends TriplePlantBlock implements IWaterLog
         builder.add(WATER_LOGGED, THIRD);
     }
     
-    @Override
+/*    @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(WATER_LOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-    }
+    }*/
 }

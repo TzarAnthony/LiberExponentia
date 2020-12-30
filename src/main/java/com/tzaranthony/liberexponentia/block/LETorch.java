@@ -12,7 +12,8 @@ public class LETorch extends TorchBlock {
 				.doesNotBlockMovement()
 				.zeroHardnessAndResistance()
 				.func_235838_a_((lightVar) -> {return light;})
-				.sound(SoundType.WOOD), ParticleTypes.field_239811_B_);
+				.sound(SoundType.WOOD)
+				, ParticleTypes.field_239811_B_);
 		this.setRegistryName(name);
 	}
 }

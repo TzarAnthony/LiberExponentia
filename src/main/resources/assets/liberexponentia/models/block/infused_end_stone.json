@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/infused_end_stone"
+    "all": "liberexponentia:block/infused_end_stone"
   }
 }

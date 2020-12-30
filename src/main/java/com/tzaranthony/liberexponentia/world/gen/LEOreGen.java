@@ -1,7 +1,6 @@
 package com.tzaranthony.liberexponentia.world.gen;
 
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
-
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import net.minecraft.block.Block;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
@@ -16,7 +15,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = Liber_Exponentia.MOD_ID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = LiberExponentia.MOD_ID, bus = Bus.MOD)
 public class LEOreGen {
 	
 	@SubscribeEvent

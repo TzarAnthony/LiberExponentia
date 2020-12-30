@@ -2,7 +2,6 @@ package com.tzaranthony.liberexponentia.util;
 
 import com.tzaranthony.liberexponentia.entity.ColdIronArrowEntity;
 import com.tzaranthony.liberexponentia.entity.SilverArrowEntity;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;

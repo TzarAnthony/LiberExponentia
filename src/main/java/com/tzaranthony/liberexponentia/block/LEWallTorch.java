@@ -13,7 +13,14 @@ public class LEWallTorch extends WallTorchBlock {
 				.doesNotBlockMovement()
 				.zeroHardnessAndResistance()
 				.func_235838_a_((lightVar) -> {return light;})
-				.sound(SoundType.WOOD).lootFrom(base), ParticleTypes.field_239811_B_);
+				.sound(SoundType.WOOD)
+				.lootFrom(base)
+				, ParticleTypes.field_239811_B_);
 		this.setRegistryName(name);
+	}
+
+	@Override
+	public String getTranslationKey() {
+		return this.asItem().getTranslationKey();
 	}
 }

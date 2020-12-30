@@ -1,7 +1,6 @@
 package com.tzaranthony.liberexponentia.item;
 
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
-
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import net.minecraft.item.Food;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
@@ -12,7 +11,7 @@ public class LifeBottle extends MagicalFood{
 	@SuppressWarnings("deprecation")
 	public LifeBottle(String name) {
 		super(new MagicalFood.Properties()
-				.group(Liber_Exponentia.TAB)
+				.group(LiberExponentia.TAB)
 				.rarity(Rarity.UNCOMMON)
 				.food(new Food.Builder()
 						.hunger(6)

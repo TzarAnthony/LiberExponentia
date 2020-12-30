@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/hihirokane_block"
+    "all": "liberexponentia:block/hihirokane_block"
   }
 }

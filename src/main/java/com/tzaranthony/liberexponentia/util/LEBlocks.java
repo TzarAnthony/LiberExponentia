@@ -1,26 +1,25 @@
 package com.tzaranthony.liberexponentia.util;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.List;
-
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import com.tzaranthony.liberexponentia.block.*;
-
-import com.tzaranthony.liberexponentia.fluid.LEFluids;
-import com.tzaranthony.liberexponentia.fluid.util.PotionTypes;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.WallTorchBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@Mod.EventBusSubscriber(modid = Liber_Exponentia.MOD_ID, bus = Bus.MOD)
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
+
+@Mod.EventBusSubscriber(modid = LiberExponentia.MOD_ID, bus = Bus.MOD)
 public class LEBlocks {
 	// ores
 	public static final Block SILVER_ORE = new LERockBlock("silver_ore", 3.0F, 5.0F);
@@ -31,38 +30,31 @@ public class LEBlocks {
 	public static final Block COLD_IRON_BLOCK = new MetalBlock("cold_iron_block", 2, 25.0F, 15.0F);
 	public static final Block CELESTIA_STEEL_BLOCK = new MetalBlock("celestial_steel_block", 4, 40.0F, 3000.0F);
 	public static final Block HIHIROKANE_BLOCK = new HihirokaneBlock("hihirokane_block");
-	
+
 	// petrified wood
 	public static final Block ROUGH_PETRIFIED_LOG = new PetrifiedWood("rough_petrified_log");
 	public static final Block PETRIFIED_LOG = new PetrifiedWood("petrified_log");
 	public static final Block ASHEN_ROUGH_PETRIFIED_LOG = new PetrifiedWood("ashen_rough_petrified_log");
 	public static final Block ASHEN_PETRIFIED_LOG = new PetrifiedWood("ashen_petrified_log");
-	
+
 	// ash
 	public static final Block VOLCANIC_ASH = new VolcanicAsh("volcanic_ash", 16006560);
 	public static final Block BLACK_VOLCANIC_ASH = new VolcanicAsh("black_volcanic_ash", 10006560);
-	
+
 	// end fire stuff
 	public static final Block END_CAMPFIRE = new LECampfire("end_campfire", 20);
-	public static final Block END_LANTERN = new LELantern("End_Lantern", 20);
+	public static final Block END_LANTERN = new LELantern("end_lantern", 20);
 	public static final Block END_TORCH = new LETorch("end_torch", 20);
-	public static final Block END_WALL_TORCH = new LEWallTorch("end_wall_torch", 20, END_TORCH);
-	
+	//public static final Block END_WALL_TORCH = new LEWallTorch("end_wall_torch", 20, END_TORCH);
+
 	// plants
 	public static final Block CORDGRASS = new Cordgrass("cordgrass");
-	public static final Block LYCIUM_NYMPHA_BLOCK = new WaterBerries("lycium_nympha");
-	
+	public static final Block LYCIUM_NYMPHA = new WaterBerries("lycium_nympha");
+
 	// misc
 	public static final Block INFUSED_END_STONE = new LERockBlock("infused_end_stone", 5.0F, 200.0F);
 	public static final Block MUD = new MetalBlock("mud", 1, 1.0F, 1.0F); // not final, needs to change
-	
-	// potion fluids
-	//public static final Block MUNDANE_POTION = new potionFluidBlockNull("mundane_potion")
-	//public static final Block THICK_POTION = new potionFluidBlockNull("thick_potion")
-	//public static final Block AWKWARD_POTION = new potionFluidBlockNull("mundane_potion")
-	//public static final Block NIGHT_VISION_POTION = new potionFluidBlock("night_vision_potion", Effects.NIGHT_VISION, 1.0f)
-	//public static final Block LONG_NIGHT_VISION_POTION = new potionFluidBlock("lengthened_night_vision_potion", Effects.NIGHT_VISION, 2.6f)
-	
+
 	// gold
 	public static final Block EMBOSSED_GOLD_BLOCK = new MetalBlock("embossed_gold_block", 2, 3.0F,  6.0F);
 	public static final Block ETCHED_GOLD_BLOCK = new MetalBlock("etched_gold_block", 2, 3.0F,  6.0F);
@@ -77,7 +69,7 @@ public class LEBlocks {
 	public static final Block GOLD_BRICKS_SLAB = new LESlab("gold_bricks_slab", Material.IRON,3.0F, 6.0F);
 	public static final Block GOLD_TILES_SLAB = new LESlab("gold_tiles_slab", Material.IRON,3.0F, 6.0F);
 	public static final Block LARGE_GOLD_BRICKS_SLAB = new LESlab("large_gold_bricks_slab", Material.IRON,3.0F, 6.0F);
-	
+
 	// mud bricks
 	public static final Block MUD_BRICKS = new MudBricks("mud_bricks", MaterialColor.ADOBE);
 	public static final Block WHITE_MUD_BRICKS = new MudBricks("white_mud_bricks", MaterialColor.WHITE_TERRACOTTA);
@@ -132,7 +124,7 @@ public class LEBlocks {
 	public static final Block GREEN_MUD_BRICKS_SLAB = new LEAbsSlab("green_mud_bricks_slab", Material.ROCK, MaterialColor.GREEN_TERRACOTTA, 1.25F, 4.2F);
 	public static final Block RED_MUD_BRICKS_SLAB = new LEAbsSlab("red_mud_bricks_slab", Material.ROCK, MaterialColor.RED_TERRACOTTA, 1.25F, 4.2F);
 	public static final Block BLACK_MUD_BRICKS_SLAB = new LEAbsSlab("black_mud_bricks_slab", Material.ROCK, MaterialColor.BLACK_TERRACOTTA, 1.25F, 4.2F);
-	
+
 	// vanilla additions (only registered if vanilla block extension is true?)
 	// terracotta
 	// stairs
@@ -171,7 +163,7 @@ public class LEBlocks {
 	public static final Block GREEN_TERRACOTTA_SLAB = new LEAbsSlab("green_terracotta_slab", Material.ROCK, MaterialColor.GREEN_TERRACOTTA, 1.25F, 4.2F);
 	public static final Block RED_TERRACOTTA_SLAB = new LEAbsSlab("red_terracotta_slab", Material.ROCK, MaterialColor.RED_TERRACOTTA, 1.25F, 4.2F);
 	public static final Block BLACK_TERRACOTTA_SLAB = new LEAbsSlab("black_terracotta_slab", Material.ROCK, MaterialColor.BLACK_TERRACOTTA, 1.25F, 4.2F);
-	
+
 	// concrete
 	// stairs
 	public static final Block WHITE_CONCRETE_STAIRS = new LEAbsStairs("white_concrete_stairs", net.minecraft.block.Blocks.WHITE_CONCRETE.getDefaultState(), net.minecraft.block.Blocks.WHITE_CONCRETE);
@@ -190,7 +182,7 @@ public class LEBlocks {
 	public static final Block GREEN_CONCRETE_STAIRS = new LEAbsStairs("green_concrete_stairs", net.minecraft.block.Blocks.GREEN_CONCRETE.getDefaultState(), net.minecraft.block.Blocks.GREEN_CONCRETE);
 	public static final Block RED_CONCRETE_STAIRS = new LEAbsStairs("red_concrete_stairs", net.minecraft.block.Blocks.RED_CONCRETE.getDefaultState(), net.minecraft.block.Blocks.RED_CONCRETE);
 	public static final Block BLACK_CONCRETE_STAIRS = new LEAbsStairs("black_concrete_stairs", net.minecraft.block.Blocks.BLACK_CONCRETE.getDefaultState(), net.minecraft.block.Blocks.BLACK_CONCRETE);
-	
+
 	// slabs
 	public static final Block WHITE_CONCRETE_SLAB = new LEAbsSlabD("white_concrete_slab", Material.ROCK, DyeColor.WHITE, 1.8F, 1.8F);
 	public static final Block ORANGE_CONCRETE_SLAB = new LEAbsSlabD("orange_concrete_slab", Material.ROCK, DyeColor.ORANGE, 1.8F, 1.8F);
@@ -209,45 +201,86 @@ public class LEBlocks {
 	public static final Block RED_CONCRETE_SLAB = new LEAbsSlabD("red_concrete_slab", Material.ROCK, DyeColor.RED, 1.8F, 1.8F);
 	public static final Block BLACK_CONCRETE_SLAB = new LEAbsSlabD("black_concrete_slab", Material.ROCK, DyeColor.BLACK, 1.8F, 1.8F);
 
-	public static final Block SPEED_POTION_FLUID = new PotionFluidBlock("SPEED_POTION_FLUID", LEFluids.POTION, PotionTypes.SPEED);
+	public static final Block MUNDANE = new PotionFluidBlock(LEFluids.MUNDANE);
+	public static final Block THICK = new PotionFluidBlock(LEFluids.THICK);
+	public static final Block AWKWARD = new PotionFluidBlock(LEFluids.AWKWARD);
+	public static final Block NIGHT_VISION = new PotionFluidBlock(LEFluids.NIGHT_VISION);
+	public static final Block LONG_NIGHT_VISION = new PotionFluidBlock(LEFluids.LONG_NIGHT_VISION);
+	public static final Block INVISIBILITY = new PotionFluidBlock(LEFluids.INVISIBILITY);
+	public static final Block LONG_INVISIBILITY = new PotionFluidBlock(LEFluids.LONG_INVISIBILITY);
+	public static final Block LEAPING = new PotionFluidBlock(LEFluids.LEAPING);
+	public static final Block LONG_LEAPING = new PotionFluidBlock(LEFluids.LONG_LEAPING);
+	public static final Block STRONG_LEAPING = new PotionFluidBlock(LEFluids.STRONG_LEAPING);
+	public static final Block FIRE_RESISTANCE = new PotionFluidBlock(LEFluids.FIRE_RESISTANCE);
+	public static final Block LONG_FIRE_RESISTANCE = new PotionFluidBlock(LEFluids.LONG_FIRE_RESISTANCE);
+	public static final Block SWIFTNESS = new PotionFluidBlock(LEFluids.SWIFTNESS);
+	public static final Block LONG_SWIFTNESS = new PotionFluidBlock(LEFluids.LONG_SWIFTNESS);
+	public static final Block STRONG_SWIFTNESS = new PotionFluidBlock(LEFluids.STRONG_SWIFTNESS);
+	public static final Block SLOWNESS = new PotionFluidBlock(LEFluids.SLOWNESS);
+	public static final Block LONG_SLOWNESS = new PotionFluidBlock(LEFluids.LONG_SLOWNESS);
+	public static final Block STRONG_SLOWNESS = new PotionFluidBlock(LEFluids.STRONG_SLOWNESS);
+	public static final Block TURTLE_MASTER = new PotionFluidBlock(LEFluids.TURTLE_MASTER);
+	public static final Block LONG_TURTLE_MASTER = new PotionFluidBlock(LEFluids.LONG_TURTLE_MASTER);
+	public static final Block STRONG_TURTLE_MASTER = new PotionFluidBlock(LEFluids.STRONG_TURTLE_MASTER);
+	public static final Block WATER_BREATHING = new PotionFluidBlock(LEFluids.WATER_BREATHING);
+	public static final Block LONG_WATER_BREATHING = new PotionFluidBlock(LEFluids.LONG_WATER_BREATHING);
+	public static final Block HEALING = new PotionFluidBlock(LEFluids.HEALING);
+	public static final Block STRONG_HEALING = new PotionFluidBlock(LEFluids.STRONG_HEALING);
+	public static final Block HARMING = new PotionFluidBlock(LEFluids.HARMING);
+	public static final Block STRONG_HARMING = new PotionFluidBlock(LEFluids.STRONG_HARMING);
+	public static final Block POISON = new PotionFluidBlock(LEFluids.POISON);
+	public static final Block LONG_POISON = new PotionFluidBlock(LEFluids.LONG_POISON);
+	public static final Block STRONG_POISON = new PotionFluidBlock(LEFluids.STRONG_POISON);
+	public static final Block REGENERATION = new PotionFluidBlock(LEFluids.REGENERATION);
+	public static final Block LONG_REGENERATION = new PotionFluidBlock(LEFluids.LONG_REGENERATION);
+	public static final Block STRONG_REGENERATION = new PotionFluidBlock(LEFluids.STRONG_REGENERATION);
+	public static final Block STRENGTH = new PotionFluidBlock(LEFluids.STRENGTH);
+	public static final Block LONG_STRENGTH = new PotionFluidBlock(LEFluids.LONG_STRENGTH);
+	public static final Block STRONG_STRENGTH = new PotionFluidBlock(LEFluids.STRONG_STRENGTH);
+	public static final Block WEAKNESS = new PotionFluidBlock(LEFluids.WEAKNESS);
+	public static final Block LONG_WEAKNESS = new PotionFluidBlock(LEFluids.LONG_WEAKNESS);
+	public static final Block LUCK = new PotionFluidBlock(LEFluids.LUCK);
+	public static final Block SLOW_FALLING = new PotionFluidBlock(LEFluids.SLOW_FALLING);
+	public static final Block LONG_SLOW_FALLING = new PotionFluidBlock(LEFluids.LONG_SLOW_FALLING);
 
 
 	// ignroe class list
 	private static final List<Class<?>> IGNORE_CLASS_LIST = Arrays.asList(WallTorchBlock.class, FlowingFluidBlock.class);
 
 	// registry functions things
+	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> regBlocks) {
-		for (Field f : LEBlocks.class.getDeclaredFields()) {
-			try {
+		try {
+			for (Field f : LEBlocks.class.getDeclaredFields()) {
 				Object obj = f.get(null);
 				if (obj instanceof Block) {
 					regBlocks.getRegistry().register((Block) obj);
-					}
-			// I have no idea why I need this yet
-			} catch (IllegalAccessException e) {
-				throw new RuntimeException(e);
+				}
 			}
+		} catch (IllegalAccessException e) {
+				throw new RuntimeException(e);
 		}
 	}
-	
+
+	@SubscribeEvent
 	public static void registerBlockItems(RegistryEvent.Register<Item> regBlockItems) {
-		for (Field f : LEBlocks.class.getDeclaredFields()) {
-			try {
+		try {
+			for (Field f : LEBlocks.class.getDeclaredFields()) {
 				Object obj = f.get(null);
 				if (obj instanceof HihirokaneBlock) {
 					// for blocks that don't burn in lava
-					BlockItem blockItem = new BlockItem((Block) obj, new Properties().func_234689_a_().group(Liber_Exponentia.TAB));
+					BlockItem blockItem = new BlockItem((Block) obj, new Item.Properties().func_234689_a_().group(LiberExponentia.TAB));
 					blockItem.setRegistryName(((Block) obj).getRegistryName());
 					regBlockItems.getRegistry().register(blockItem);
 				}
 				else if (obj instanceof Block && !IGNORE_CLASS_LIST.contains(obj.getClass())) {
-					BlockItem blockItem = new BlockItem((Block) obj, new Properties().group(Liber_Exponentia.TAB));
+					BlockItem blockItem = new BlockItem((Block) obj, new Item.Properties().group(LiberExponentia.TAB));
 					blockItem.setRegistryName(((Block) obj).getRegistryName());
 					regBlockItems.getRegistry().register(blockItem);
 				}
-			} catch (IllegalAccessException e) {
-				throw new RuntimeException(e);
 			}
+		} catch (IllegalAccessException e) {
+				throw new RuntimeException(e);
 		}
 	}
 }

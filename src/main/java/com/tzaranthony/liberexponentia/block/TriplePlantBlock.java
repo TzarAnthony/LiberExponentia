@@ -1,12 +1,6 @@
 package com.tzaranthony.liberexponentia.block;
 
-import javax.annotation.Nullable;
-
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
@@ -22,6 +16,8 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
 
 public class TriplePlantBlock extends BushBlock{
 	public static final EnumProperty<TripleBlockThirds> THIRD = LEBlockStateProperties.TRIPLE_BLOCK_THIRDS;

@@ -11,10 +11,14 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -24,22 +28,54 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fluids.FluidAttributes;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
-public abstract class PotionFluid extends FlowingFluid {
+public class PotionFluid extends FlowingFluid {
+	protected Potion potion;
+	private Flowing flowingPotionFluid;
+	private Source sourcePotionFluid;
+	private Block fluidBlock;
+	private final String name;
+
+	public PotionFluid(String name, Potion potion, Block fluidBlock) {
+		super();
+		this.potion = potion;
+		this.fluidBlock = fluidBlock;
+		this.name = name;
+	}
+
+	public final PotionFluid registerSourceFlowingFluids() {
+		this.flowingPotionFluid = new Flowing(this.name + "_flowing", this.potion, this.fluidBlock);
+		this.sourcePotionFluid = new Source(this.name + "_source", this.potion, this.fluidBlock);
+		return this;
+	}
 
 	public Fluid getFlowingFluid() {
-		return LEFluids.FLOWING_POTION;
+		return flowingPotionFluid;
 	}
 
 	public Fluid getStillFluid() {
-		return LEFluids.POTION;
+		return sourcePotionFluid;
 	}
 
 	public Item getFilledBucket() {
 		return LEItems.POTION_BUCKET;
+	}
+
+	@Override
+	public FluidAttributes createAttributes() {
+		return FluidAttributes.builder(
+				new ResourceLocation("block/potion_still"),
+				new ResourceLocation("block/potion_flow"))
+				.overlay(new ResourceLocation("block/potion_overlay"))
+				.translationKey("block.liberexponentia.potion")
+				.color(PotionUtils.getPotionColor(this.potion))
+				.sound(SoundEvents.ITEM_BUCKET_FILL, SoundEvents.ITEM_BUCKET_EMPTY)
+				.build(this);
 	}
 
 	@OnlyIn(Dist.CLIENT)
@@ -96,29 +132,65 @@ public abstract class PotionFluid extends FlowingFluid {
 	}
 
 	protected BlockState getBlockState(FluidState state) {
-		return LEBlocks.ASHEN_PETRIFIED_LOG.getDefaultState().with(FlowingFluidBlock.LEVEL, Integer.valueOf(getLevelFromState(state)));
+		return this.fluidBlock.getDefaultState().with(FlowingFluidBlock.LEVEL, Integer.valueOf(getLevelFromState(state)));
+	}
+
+	@Override
+	public boolean isSource(FluidState state) {
+		return false;
+	}
+
+	@Override
+	public int getLevel(FluidState p_207192_1_) {
+		return 0;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public Potion getPotion() {
+		return this.potion;
+	}
+
+	public List<EffectInstance> getPotionEffects() {
+		return this.potion.getEffects();
 	}
 
 	public static class Flowing extends PotionFluid {
+		public Flowing(String name, Potion potion, Block fluidBlock) {
+			super(name, potion, fluidBlock);
+			this.setRegistryName(name);
+		}
+
 		protected void fillStateContainer(StateContainer.Builder<Fluid, FluidState> builder) {
 			super.fillStateContainer(builder);
 			builder.add(LEVEL_1_8);
 		}
 
+		@Override
 		public int getLevel(FluidState state) {
 			return state.get(LEVEL_1_8);
 		}
 
+		@Override
 		public boolean isSource(FluidState state) {
 			return false;
 		}
 	}
 
 	public static class Source extends PotionFluid {
+		public Source(String name, Potion potion, Block fluidBlock) {
+			super(name, potion, fluidBlock);
+			this.setRegistryName(name);
+		}
+
+		@Override
 		public int getLevel(FluidState state) {
 			return 8;
 		}
 
+		@Override
 		public boolean isSource(FluidState state) {
 			return true;
 		}

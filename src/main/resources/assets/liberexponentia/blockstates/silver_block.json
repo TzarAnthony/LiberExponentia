@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/silver_block"
+      "model": "liberexponentia:block/silver_block"
     }
   }
 }

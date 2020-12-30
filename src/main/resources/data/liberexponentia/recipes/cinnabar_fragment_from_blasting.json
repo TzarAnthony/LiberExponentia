@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "liberexponentia:cinnabar_ore"
+  },
+  "result": "liberexponentia:cinnabar_fragment",
+  "count": 3,
+  "experience": 1.0,
+  "cookingtime": 200
+}

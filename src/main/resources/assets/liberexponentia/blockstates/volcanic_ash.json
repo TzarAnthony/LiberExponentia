@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/volcanic_ash"
+      "model": "liberexponentia:block/volcanic_ash"
     }
   }
 }

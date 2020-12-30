@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/etched_gold_block"
+    "all": "liberexponentia:block/etched_gold_block"
   }
 }

@@ -1,8 +1,7 @@
 package com.tzaranthony.liberexponentia.item;
 
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import com.tzaranthony.liberexponentia.entity.ColdIronArrowEntity;
-
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -14,7 +13,7 @@ import net.minecraft.world.World;
 public class ColdIronArrow extends ArrowItem{
 
 	public ColdIronArrow(String name) {
-		super(new Item.Properties().group(Liber_Exponentia.TAB));
+		super(new Item.Properties().group(LiberExponentia.TAB));
 		this.setRegistryName(name);
 	}
 	

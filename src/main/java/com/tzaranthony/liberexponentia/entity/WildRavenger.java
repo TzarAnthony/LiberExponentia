@@ -1,52 +1,20 @@
 package com.tzaranthony.liberexponentia.entity;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.*;
-import net.minecraft.entity.merchant.villager.VillagerEntity;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.PolarBearEntity;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.passive.WolfEntity;
-import net.minecraft.entity.passive.horse.AbstractHorseEntity;
-import net.minecraft.entity.passive.horse.LlamaEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.pathfinding.GroundPathNavigator;
-import net.minecraft.pathfinding.PathFinder;
-import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.pathfinding.WalkNodeProcessor;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.util.EnumSet;
-import java.util.UUID;
-import java.util.function.Predicate;
-
-public class WildRavenger extends AbstractHorseEntity implements IAngerable {
+/*public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 	protected static final DataParameter<Byte> TAMED = EntityDataManager.createKey(TameableEntity.class, DataSerializers.BYTE);
 	private static final Ingredient FOOD = Ingredient.fromItems(Items.SUGAR_CANE, Items.WHEAT, Blocks.HAY_BLOCK.asItem(), Items.KELP, Items.DRIED_KELP, Blocks.DRIED_KELP_BLOCK.asItem());
 	private TemptGoal temptGoal;
 
-	/**
+	*//**
 	 * Ravenger Properties
-	 */
+	 *//*
 	private int attackTick;
 	private int stunTick;
 	private int roarTick;
 
-	/**
+	*//**
 	 * Angerable Properties
-	 */
+	 *//*
 	private static final RangedInteger unknownRange = TickRangeConverter.func_233037_a_(20, 39);
 	protected int unknownInt;
 	protected UUID playerId;
@@ -90,23 +58,23 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 		this.temptGoal = temptGoal;
 	}
 
-	/**
+	*//**
 	 *
-	 */
+	 *//*
 	public boolean isTamed() {
 		return (this.dataManager.get(TAMED) & 4) != 0;
 	}
 
-	/**
+	*//**
 	 * Dead and sleeping entities cannot move
-	 */
+	 *//*
 	protected boolean isMovementBlocked() {
 		return super.isMovementBlocked() || this.attackTick > 0 || this.stunTick > 0 || this.roarTick > 0;
 	}
 
-	/**
+	*//**
 	 * returns true if the entity provided in the argument can be seen. (Raytrace)
-	 */
+	 *//*
 	public boolean canEntityBeSeen(Entity entityIn) {
 		return this.stunTick <= 0 && this.roarTick <= 0 ? super.canEntityBeSeen(entityIn) : false;
 	}
@@ -154,9 +122,9 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 		p_213688_1_.addVelocity(d0 / d2 * 4.0D, 0.2D, d1 / d2 * 4.0D);
 	}
 
-	/**
+	*//**
 	 * Goals
-	 */
+	 *//*
 
 	static class AvoidPlayerGoal<T extends LivingEntity> extends AvoidEntityGoal<T> {
 		private final WildRavenger rav;
@@ -166,17 +134,17 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			return !this.rav.isTamed() && super.shouldExecute();
 		}
 
-		/**
+		*//**
 		 * Returns whether an in-progress EntityAIBase should continue executing
-		 */
+		 *//*
 		public boolean shouldContinueExecuting() {
 			return !this.rav.isTamed() && super.shouldContinueExecuting();
 		}
@@ -190,10 +158,10 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			if (super.shouldExecute() && this.avoidTarget instanceof LlamaEntity) {
 				return !this.rav.isTamed() && this.avoidLlama((LlamaEntity) this.avoidTarget);
@@ -206,17 +174,17 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			return llamaIn.getStrength() >= WildRavenger.this.rand.nextInt(5);
 		}
 
-		/**
+		*//**
 		 * Execute a one shot task or start executing a continuous task
-		 */
+		 *//*
 		public void startExecuting() {
 			WildRavenger.this.setAttackTarget((LivingEntity) null);
 			super.startExecuting();
 		}
 
-		/**
+		*//**
 		 * Keep ticking a continuous task that has already been started
-		 */
+		 *//*
 		public void tick() {
 			WildRavenger.this.setAttackTarget((LivingEntity) null);
 			super.tick();
@@ -264,9 +232,9 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Keep ticking a continuous task that has already been started
-		 */
+		 *//*
 		public void tick() {
 			super.tick();
 			if (this.temptingPlayer == null && this.creature.getRNG().nextInt(600) == 0) {
@@ -280,10 +248,10 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			return this.temptingPlayer != null && this.temptingPlayer.equals(this.closestPlayer) ? false : super.isScaredByPlayerMovement();
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			return super.shouldExecute() && !this.rav.isTamed();
 		}
@@ -295,10 +263,10 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			super(WildRavenger.this, PlayerEntity.class, 20, true, true, (Predicate<LivingEntity>)null);
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			if (WildRavenger.this.isChild()) {
 				return false;
@@ -318,9 +286,9 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 		}
 	}
 
-	/**
+	*//**
 	 *
-	 */
+	 *//*
 	class OwnerHurtByTargetGoal extends TargetGoal {
 		private final TameableEntity tameable;
 		private LivingEntity attacker;
@@ -332,10 +300,10 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			this.setMutexFlags(EnumSet.of(Goal.Flag.TARGET));
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			if (this.tameable.isTamed() && !this.tameable.func_233685_eM_()) {
 				LivingEntity livingentity = this.tameable.getOwner();
@@ -351,9 +319,9 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 			}
 		}
 
-		/**
+		*//**
 		 * Execute a one shot task or start executing a continuous task
-		 */
+		 *//*
 		public void startExecuting() {
 			this.goalOwner.setAttackTarget(this.attacker);
 			LivingEntity livingentity = this.tameable.getOwner();
@@ -365,9 +333,9 @@ public class WildRavenger extends AbstractHorseEntity implements IAngerable {
 		}
 	}
 
-	/**
+	*//**
 	 * Angerable overides
-	 */
+	 *//*
 
 	@Override
 	public int func_230256_F__() {
@@ -451,7 +419,7 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 
 		// target goals
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));aw
+		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setCallsForHelp());
 		this.targetSelector.addGoal(4, new WildRavenger.AttackPlayerGoal());
 		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, this::func_233680_b_));
@@ -467,9 +435,9 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 		compound.putInt("RoarTick", this.roarTick);
 	}
 
-	/**
+	*//**
 	 * (abstract) Protected helper method to read subclass entity data from NBT.
-	 */
+	 *//*
 	public void readAdditional(CompoundNBT compound) {
 		super.readAdditional(compound);
 		this.attackTick = compound.getInt("AttackTick");
@@ -516,10 +484,10 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 		return !worldIn.containsAnyLiquid(this.getBoundingBox());
 	}
 
-	/**
+	*//**
 	 * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
 	 * use this to react to sunlight and start to burn.
-	 */
+	 *//*
 	public void livingTick() {
 		super.livingTick();
 		if (this.isAlive()) {
@@ -579,16 +547,16 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 		}
 	}
 
-	/**
+	*//**
 	 * Dead and sleeping entities cannot move
-	 */
+	 *//*
 	protected boolean isMovementBlocked() {
 		return super.isMovementBlocked() || this.attackTick > 0 || this.stunTick > 0 || this.roarTick > 0;
 	}
 
-	/**
+	*//**
 	 * returns true if the entity provided in the argument can be seen. (Raytrace)
-	 */
+	 *//*
 	public boolean canEntityBeSeen(Entity entityIn) {
 		return this.stunTick <= 0 && this.roarTick <= 0 ? super.canEntityBeSeen(entityIn) : false;
 	}
@@ -653,10 +621,10 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			if (super.shouldExecute() && this.avoidTarget instanceof LlamaEntity) {
 				return !this.rav.isTamed() && this.avoidLlama((LlamaEntity)this.avoidTarget);
@@ -669,17 +637,17 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 			return llamaIn.getStrength() >= WildRavenger.this.rand.nextInt(5);
 		}
 
-		/**
+		*//**
 		 * Execute a one shot task or start executing a continuous task
-		 */
+		 *//*
 		public void startExecuting() {
 			WildRavenger.this.setAttackTarget((LivingEntity)null);
 			super.startExecuting();
 		}
 
-		/**
+		*//**
 		 * Keep ticking a continuous task that has already been started
-		 */
+		 *//*
 		public void tick() {
 			WildRavenger.this.setAttackTarget((LivingEntity)null);
 			super.tick();
@@ -783,17 +751,17 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			return !this.rav.isTamed() && super.shouldExecute();
 		}
 
-		/**
+		*//**
 		 * Returns whether an in-progress EntityAIBase should continue executing
-		 */
+		 *//*
 		public boolean shouldContinueExecuting() {
 			return !this.rav.isTamed() && super.shouldContinueExecuting();
 		}
@@ -809,9 +777,9 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 			this.rav = ravIn;
 		}
 
-		/**
+		*//**
 		 * Keep ticking a continuous task that has already been started
-		 */
+		 *//*
 		public void tick() {
 			super.tick();
 			if (this.temptingPlayer == null && this.creature.getRNG().nextInt(600) == 0) {
@@ -825,10 +793,10 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 			return this.temptingPlayer != null && this.temptingPlayer.equals(this.closestPlayer) ? false : super.isScaredByPlayerMovement();
 		}
 
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			return super.shouldExecute() && !this.rav.isTamed();
 		}
@@ -844,10 +812,10 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 		public AttackPlayerGoal() {
 			super(WildRavenger.this, PlayerEntity.class, 20, true, true, (Predicate<LivingEntity>)null);
 		}
-		/**
+		*//**
 		 * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
 		 * method as well.
-		 */
+		 *//*
 		public boolean shouldExecute() {
 			if (WildRavenger.this.isChild()) {
 				return false;
@@ -902,3 +870,4 @@ public class WildRavenger extends RavagerEntity implements IAngerable, ImRidable
 		this.func_230260_a__(unknown_range.func_233018_a_(this.rand));
 	}
 }
+*/

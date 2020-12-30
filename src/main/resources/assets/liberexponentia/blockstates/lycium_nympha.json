@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/lycium_nympha"
+      "model": "liberexponentia:block/lycium_nympha"
     }
   }
 }

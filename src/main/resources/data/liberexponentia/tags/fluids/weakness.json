@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#forge:fluids/weakness",
-    "#forge:fluids/weakness_t",
-    "#forge:fluids/weakness_2"
-  ]
-}

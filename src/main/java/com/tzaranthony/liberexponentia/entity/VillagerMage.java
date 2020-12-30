@@ -1,21 +1,15 @@
 package com.tzaranthony.liberexponentia.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
-import com.tzaranthony.liberexponentia.Liber_Exponentia;
+import com.tzaranthony.liberexponentia.LiberExponentia;
 import com.tzaranthony.liberexponentia.util.LEBlocks;
 import com.tzaranthony.liberexponentia.util.LEItems;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ai.brain.task.GiveHeroGiftsTask;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.entity.merchant.villager.VillagerTrades.ITrade;
 import net.minecraft.item.Item;
@@ -32,12 +26,10 @@ import net.minecraft.world.gen.feature.jigsaw.JigsawPattern;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPatternRegistry;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPiece;
 import net.minecraft.world.gen.feature.jigsaw.LegacySingleJigsawPiece;
-import net.minecraft.world.gen.feature.structure.DesertVillagePools;
-import net.minecraft.world.gen.feature.structure.PlainsVillagePools;
-import net.minecraft.world.gen.feature.structure.SavannaVillagePools;
-import net.minecraft.world.gen.feature.structure.SnowyVillagePools;
-import net.minecraft.world.gen.feature.structure.TaigaVillagePools;
+import net.minecraft.world.gen.feature.structure.*;
 import net.minecraft.world.gen.feature.template.ProcessorLists;
+import net.minecraft.world.gen.feature.template.StructureProcessorList;
+import net.minecraft.world.gen.feature.template.Template;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -45,6 +37,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.function.Supplier;
 
 public class VillagerMage {
 	public static void init() {
@@ -63,38 +60,42 @@ public class VillagerMage {
 		
 		// register placement of houses
 		JigsawPatternRegistry.func_244094_a(new JigsawPattern(
-			new ResourceLocation(Liber_Exponentia.MOD_ID, "village/mage"),
+			new ResourceLocation(LiberExponentia.MOD_ID, "village/mage"),
 			new ResourceLocation("empty"),
-			ImmutableList.of(Pair.of(JigsawPiece.func_242849_a(Liber_Exponentia.MOD_ID + ":village/mage/mage_1"), 1)),
+			ImmutableList.of(Pair.of(JigsawPiece.func_242849_a(LiberExponentia.MOD_ID + ":village/mage/mage_1"), 1)),
 			JigsawPattern.PlacementBehaviour.RIGID));
 		
-		// register gifts
-		GiveHeroGiftsTask.GIFTS.put(MerchantRegister.MAGE.get(), new ResourceLocation(Liber_Exponentia.MOD_ID, "gameplay/hero_of_the_village/mage_gifts"));
+		// register gifts doesn't actually work
+		//GiveHeroGiftsTask.GIFTS.put(MerchantRegister.MAGE.get(), new ResourceLocation(Liber_Exponentia.MOD_ID, "gameplay/hero_of_the_village/mage_gifts"));
 	}
 	
 	
 	// I've no idea what any of this does LOL -- well it seems to register patterns for the houses, but aside from that....
 	private static void addHouseToPool(ResourceLocation pool, ResourceLocation toAdd, int weight) {
 		JigsawPattern old = WorldGenRegistries.field_243656_h.getOrDefault(pool); // not sure this is the right world gen field
-		
-		List<JigsawPiece> shuffled = old.getShuffledPieces(new Random());
-		List<Pair<JigsawPiece, Integer>> newPieces = new ArrayList<>();
-		
-		for (JigsawPiece p : shuffled) {newPieces.add(new Pair<>(p, 1));}
-		
-		newPieces.add(Pair.of(new LegacySingleJigsawPiece(Either.left(toAdd),
-				() -> ProcessorLists.field_244101_a, JigsawPattern.PlacementBehaviour.RIGID), weight));
-		
-		ResourceLocation name = old.getName();
-		Registry.register(WorldGenRegistries.field_243656_h, pool, new JigsawPattern(pool, name, newPieces));
+
+		if (old != null) {
+			List<JigsawPiece> shuffled = old.getShuffledPieces(new Random());
+			List<Pair<JigsawPiece, Integer>> newPieces = new ArrayList<>();
+
+			for (JigsawPiece p : shuffled) {
+				newPieces.add(new Pair<>(p, 1));
+			}
+
+			newPieces.add(Pair.of(new CoolNewSingleJigsawPiece(Either.left(toAdd),
+					() -> ProcessorLists.field_244101_a, JigsawPattern.PlacementBehaviour.RIGID), weight));
+
+			ResourceLocation name = old.getName();
+			Registry.register(WorldGenRegistries.field_243656_h, pool, new JigsawPattern(pool, name, newPieces));
+		}
 	}
 	
 	
 	// Register poi and profession data
-	@Mod.EventBusSubscriber(modid = Liber_Exponentia.MOD_ID, bus = Bus.FORGE)
+	@Mod.EventBusSubscriber(modid = LiberExponentia.MOD_ID, bus = Bus.FORGE)
 	public static class MerchantRegister {
-		public static final DeferredRegister<PointOfInterestType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, Liber_Exponentia.MOD_ID);
-		public static final DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(ForgeRegistries.PROFESSIONS, Liber_Exponentia.MOD_ID);
+		public static final DeferredRegister<PointOfInterestType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, LiberExponentia.MOD_ID);
+		public static final DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(ForgeRegistries.PROFESSIONS, LiberExponentia.MOD_ID);
 		
 		public static final RegistryObject<PointOfInterestType> idk = POI_TYPES.register(
 				"idk", () -> new PointOfInterestType("mage", PointOfInterestType.getAllStates(LEBlocks.COLD_IRON_BLOCK), 1, 1));
@@ -104,36 +105,30 @@ public class VillagerMage {
 	
 	
 	// register trade events
-	@Mod.EventBusSubscriber(modid = Liber_Exponentia.MOD_ID, bus = Bus.FORGE)
+	@Mod.EventBusSubscriber(modid = LiberExponentia.MOD_ID, bus = Bus.FORGE)
 	public static class TradeEvents {
 		@SubscribeEvent
 		public static void registerTrades(VillagerTradesEvent vTradeEvent) {
 			Int2ObjectMap<List<ITrade>> trades = vTradeEvent.getTrades();
 			
 			// standard trade xp are buy/sell > 2/1, 10/5, 20/10, 30/15. 60/30
-			if (vTradeEvent.getType() == MAGE.get()) {
-				trades.get(1).add(new VillagerSells(LEItems.IGNI_BOTTLE, 3, 1, 12, 1));
-				trades.get(1).add(new VillagerSells(LEItems.AQUA_BOTTLE, 3, 1, 12, 1));
-				trades.get(1).add(new VillagerSells(LEItems.TERRA_BOTTLE, 3, 1, 12, 1));
-				trades.get(1).add(new VillagerSells(LEItems.CAELUM_BOTTLE, 3, 1, 12, 1));
-				trades.get(1).add(new VillagerSells(LEItems.FULGUR_BOTTLE, 3, 1, 12, 1));
-				trades.get(1).add(new VillagerSells(LEItems.MENS_BOTTLE, 3, 1, 12, 1));
+			if (vTradeEvent.getType() == MerchantRegister.MAGE.get()) {
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_IGNI, 3, 1, 12, 1));
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_AQUA, 3, 1, 12, 1));
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_TERRA, 3, 1, 12, 1));
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_CAELUM, 3, 1, 12, 1));
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_FULGUR, 3, 1, 12, 1));
+				trades.get(1).add(new VillagerSells(LEItems.BOTTLE_OF_MENS, 3, 1, 12, 1));
 				
 				trades.get(2).add(new VillagerBuys(LEItems.SILVER_INGOT, 3, 12, 10));
-				trades.get(2).add(new VillagerBuys(LEItems.CINNBAR_FRAGMENT, 2, 12, 10));
+				trades.get(2).add(new VillagerBuys(LEItems.CINNABAR_FRAGMENT, 2, 12, 10));
 				trades.get(2).add(new VillagerBuys(Items.PHANTOM_MEMBRANE, 6, 12, 10));
 				
 				// maybe add potion buckets here
-				trades.get(3).add(new VillagerSells(LEItems.INANIS_BOTTLE, 6, 1, 12, 10));
-				trades.get(3).add(new VillagerSells(LEItems.CLARITAS_BOTTLE, 6, 1, 12, 10));
-				trades.get(3).add(new VillagerSells(LEItems.AUTOMATA_BOTTLE, 6, 1, 12, 10));
-				trades.get(3).add(new VillagerSells(LEItems.ALCHIMIA_BOTTLE, 6, 1, 12, 10));
-				trades.get(3).add(new VillagerSells(LEItems.ANIMUS_BOTTLE, 6, 1, 12, 10));
-				trades.get(3).add(new VillagerSells(LEItems.IMPETUS_BOTTLE, 6, 1, 12, 10));
+				trades.get(4).add(new VillagerSells(LEItems.BOTTLE_OF_MERCURY, 6, 1, 12, 15));
+				trades.get(4).add(new VillagerSells(LEItems.VAMPIRE_BLOOD, 16, 1, 12, 15));
 				
-				trades.get(4).add(new VillagerSells(LEItems.IMPETUS_BOTTLE, 6, 1, 12, 15));
-				
-				trades.get(5).add(new VillagerSells(LEBlocks.LYCIUM_NYMPHA, 64, 1, 6, 30));
+				trades.get(5).add(new VillagerSells(LEItems.NYMPHA_BERRIES, 64, 1, 6, 30));
 				trades.get(5).add(new VillagerSells(LEItems.DRACONITE, 64, 1, 10, 30));
 			}
 		}
@@ -196,6 +191,13 @@ public class VillagerMage {
 		public MerchantOffer getOffer(Entity trader, Random rand) {
 			ItemStack item = new ItemStack(this.villagerWants, this.amountWanted);
 			return new MerchantOffer(item, new ItemStack(Items.EMERALD), this.maxTrades, this.xpGiven, this.priceMultiplier);
+		}
+	}
+
+	private static class CoolNewSingleJigsawPiece extends LegacySingleJigsawPiece {
+
+		public CoolNewSingleJigsawPiece(Either<ResourceLocation, Template> p_i242007_1_, Supplier<StructureProcessorList> p_i242007_2_, JigsawPattern.PlacementBehaviour p_i242007_3_) {
+			super(p_i242007_1_, p_i242007_2_, p_i242007_3_);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "liberexponentia:lycium_nympha"
+    "layer0": "liberexponentia/block:lycium_nympha"
   }
 }

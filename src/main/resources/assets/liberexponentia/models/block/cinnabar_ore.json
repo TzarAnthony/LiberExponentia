@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/cinnabar_ore"
+    "all": "liberexponentia:block/cinnabar_ore"
   }
 }

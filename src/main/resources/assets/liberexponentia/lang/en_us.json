@@ -1,6 +1,5 @@
 {
   "item.liberexponentia.dye_base": "Dye Base",
-  "item.liberexponentia.bottle_of_igni": "Bottle of Igni",
 
   "item.liberexponentia.cinnabar_fragment": "Cinnabar Fragment",
   "item.liberexponentia.cold_iron_nugget": "Cold Iron Nugget",
@@ -8,18 +7,6 @@
   "item.liberexponentia.silver_nugget": "Silver Nugget",
   "item.liberexponentia.silver_ingot": "Silver Ingot",
 
-  "item.liberexponentia.silver_sword": "Silver Sword",
-  "item.liberexponentia.silver_pickaxe": "Silver Pickaxe",
-  "item.liberexponentia.silver_axe": "Silver Axe",
-  "item.liberexponentia.silver_shovel": "Silver Shovel",
-  "item.liberexponentia.silver_hoe": "Silver Hoe",
-
-  "item.liberexponentia.silver_helmet": "Silver Helmet",
-  "item.liberexponentia.silver_chestplate": "Silver Chestplate",
-  "item.liberexponentia.silver_leggings": "Silver Leggings",
-  "item.liberexponentia.silver_boots": "Silver Boots",
-
-  "block.liberexponentia.volcanic_ash": "Volcanic Ash",
   "block.liberexponentia.silver_ore": "Silver Ore",
   "block.liberexponentia.cinnabar_ore": "Cinnabar Ore",
 

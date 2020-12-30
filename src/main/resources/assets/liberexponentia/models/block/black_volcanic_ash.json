@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "liberexponentia:blocks/black_volcanic_ash"
+    "all": "liberexponentia:block/black_volcanic_ash"
   }
 }

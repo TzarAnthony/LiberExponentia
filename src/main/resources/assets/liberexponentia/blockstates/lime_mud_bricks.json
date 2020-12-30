@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/lime_mud_bricks"
+      "model": "liberexponentia:block/lime_mud_bricks"
     }
   }
 }

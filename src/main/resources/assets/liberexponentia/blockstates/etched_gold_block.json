@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "liberexponentia:blocks/etched_gold_block"
+      "model": "liberexponentia:block/etched_gold_block"
     }
   }
 }
