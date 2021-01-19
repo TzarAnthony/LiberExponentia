@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "liberexponentia:cold_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "liberexponentia:cold_iron_block"
+  }
+}

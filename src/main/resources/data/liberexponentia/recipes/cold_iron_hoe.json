@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "forge:rod/wooden"
+      "tag": "forge:rod/wooden"
     },
     "X": {
       "item": "liberexponentia:cold_iron_ingot"

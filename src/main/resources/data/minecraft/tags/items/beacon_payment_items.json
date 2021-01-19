@@ -1,8 +1,14 @@
 {
   "replace": false,
   "values": [
-    "liberexponentia:hihirokane_ingot",
     "liberexponentia:silver_ingot",
+    "liberexponentia:celestial_steel_ingot",
+    "liberexponentia:hihirokane_ingot",
+    "liberexponentia:forged_steel_ingot",
+    "liberexponentia:void_ingot",
+    "liberexponentia:cursed_silver_ingot",
+    "liberexponentia:orichalcum_ingot",
+    "liberexponentia:anceps_lux_ingot",
     "liberexponentia:cold_iron_ingot"
   ]
 }

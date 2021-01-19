@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
-      "model": "liberexponentia:block/lycium_nympha"
+    "age=0": {
+      "model": "liberexponentia:block/lycium_nympha_stage0"
+    },
+    "age=1": {
+      "model": "liberexponentia:block/lycium_nympha_stage1"
+    },
+    "age=2": {
+      "model": "liberexponentia:block/lycium_nympha_stage2"
+    },
+    "age=3": {
+      "model": "liberexponentia:block/lycium_nympha_stage3"
     }
   }
 }

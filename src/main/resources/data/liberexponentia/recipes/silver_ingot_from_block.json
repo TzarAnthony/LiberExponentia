@@ -3,7 +3,7 @@
   "group": "silver_ingot",
   "ingredients": [
     {
-      "item": "forge:blocks/silver"
+      "tag": "forge:blocks/silver"
     }
   ],
   "result": {

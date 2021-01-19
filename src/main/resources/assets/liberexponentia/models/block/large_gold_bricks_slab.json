@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "liberexponentia:block/large_gold_bricks",
+    "top": "liberexponentia:block/large_gold_bricks",
+    "side": "liberexponentia:block/large_gold_bricks"
+  }
+}

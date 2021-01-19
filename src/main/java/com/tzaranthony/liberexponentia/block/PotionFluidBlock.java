@@ -17,7 +17,7 @@ public class PotionFluidBlock extends FlowingFluidBlock {
     public List<EffectInstance> effects;
 
     public PotionFluidBlock(PotionFluid fluid) {
-        super(fluid, AbstractBlock.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops());
+        super(fluid.delegate, AbstractBlock.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops());
         this.effects = fluid.getPotionEffects();
         this.setRegistryName(fluid.getName());
     }
@@ -26,7 +26,7 @@ public class PotionFluidBlock extends FlowingFluidBlock {
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
         if (!worldIn.isRemote) {
             if (entityIn instanceof LivingEntity) {
-                LivingEntity livingentity = (LivingEntity)entityIn;
+                LivingEntity livingentity = (LivingEntity) entityIn;
 
                 // Make fluid block give all effects of potion
                 for (EffectInstance effect : this.effects)

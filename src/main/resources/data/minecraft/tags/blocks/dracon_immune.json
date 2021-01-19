@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
-    "liberexponentia:infused_end_stone"
+    "liberexponentia:infused_end_stone",
+    "liberexponentia:silver_block",
+    "liberexponentia:celestial_steel_block",
+    "liberexponentia:hihirokane_block",
+    "liberexponentia:forged_steel_block",
+    "liberexponentia:void_block",
+    "liberexponentia:cursed_silver_block",
+    "liberexponentia:orichalcum_block",
+    "liberexponentia:anceps_lux_block",
+    "liberexponentia:cold_iron_block"
   ]
 }

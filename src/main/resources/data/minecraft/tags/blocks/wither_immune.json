@@ -1,5 +1,9 @@
 {
   "replace": false,
   "values": [
+    "liberexponentia:celestial_steel_block",
+    "liberexponentia:void_block",
+    "liberexponentia:cursed_silver_block",
+    "liberexponentia:anceps_lux_block"
   ]
 }

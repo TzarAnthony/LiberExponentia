@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "liberexponentia:void_block",
+    "liberexponentia:cursed_silver_block",
+    "liberexponentia:void_ingot",
+    "liberexponentia:cursed_silver_ingot",
+    "liberexponentia:void_nugget",
+    "liberexponentia:cursed_silver_nugget",
+    "liberexponentia:void_helmet",
+    "liberexponentia:void_chestplate",
+    "liberexponentia:void_leggings",
+    "liberexponentia:void_boots",
+    "liberexponentia:void_shovel",
+    "liberexponentia:void_sword",
+    "liberexponentia:void_pickaxe",
+    "liberexponentia:void_hoe",
+    "liberexponentia:void_axe",
+    "liberexponentia:undead_helmet",
+    "liberexponentia:undead_chestplate",
+    "liberexponentia:undead_leggings",
+    "liberexponentia:undead_boots",
+    "liberexponentia:undead_shovel",
+    "liberexponentia:undead_sword",
+    "liberexponentia:undead_pickaxe",
+    "liberexponentia:undead_hoe",
+    "liberexponentia:undead_axe"
+  ]
+}

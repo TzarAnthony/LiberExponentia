@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "liberexponentia:block/lycium_nympha_stage0"
+  }
+}

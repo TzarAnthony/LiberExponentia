@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "forge:rod/wooden"
+      "tag": "forge:rod/wooden"
     },
     "X": {
-      "item": "forge:ingots/silver"
+      "tag": "forge:ingots/silver"
     }
   },
   "result": {

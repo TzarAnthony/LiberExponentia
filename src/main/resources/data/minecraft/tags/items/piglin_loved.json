@@ -12,6 +12,19 @@
     "liberexponentia:hihirokane_sword",
     "liberexponentia:hihirokane_pickaxe",
     "liberexponentia:hihirokane_hoe",
-    "liberexponentia:hihirokane_axe"
+    "liberexponentia:hihirokane_axe",
+    "liberexponentia:nebu_ingot",
+    "liberexponentia:nebu_nugget",
+    "liberexponentia:embossed_gold_block",
+    "liberexponentia:etched_gold_block",
+    "liberexponentia:gold_bricks",
+    "liberexponentia:gold_tiles",
+    "liberexponentia:large_gold_bricks",
+    "liberexponentia:gold_bricks_stairs",
+    "liberexponentia:gold_tiles_stairs",
+    "liberexponentia:large_gold_bricks_stairs",
+    "liberexponentia:gold_bricks_slab",
+    "liberexponentia:gold_tiles_slab",
+    "liberexponentia:large_gold_bricks_slab"
   ]
 }

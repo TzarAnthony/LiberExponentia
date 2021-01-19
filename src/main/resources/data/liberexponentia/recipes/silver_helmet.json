@@ -6,7 +6,7 @@
   ],
   "key": {
     "X": {
-      "item": "forge:ingots/silver"
+      "tag": "forge:ingots/silver"
     }
   },
   "result": {
